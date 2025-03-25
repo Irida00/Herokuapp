@@ -6,6 +6,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * BasePage is the parent class for all page objects in The Internet HerokuApp test suite.
+ * It contains common web interaction methods used by all pages.
+ *
+ * Features:
+ * - Methods for clicking elements, typing input, and verifying visibility.
+ * - Wrapper functions for WebDriver interactions.
+ * - Wait utilities for handling dynamic elements.
+ *
+ * This class follows the Page Object Model (POM) to maintain reusable and maintainable test code.
+ */
+
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
