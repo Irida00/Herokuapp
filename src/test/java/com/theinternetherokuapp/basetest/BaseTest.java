@@ -2,7 +2,9 @@ package com.theinternetherokuapp.basetest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
@@ -17,6 +19,7 @@ import java.util.logging.Logger;
  * Features:
  * - WebDriver initialization with support for Chrome and Firefox.
  * - Test setup and teardown using `@BeforeMethod` and `@AfterMethod`.
+ * - Supports headless mode for faster execution.
  * - Ensures browser is started and closed properly after each test.
  *
  * - Default browser: Chrome.
@@ -28,24 +31,37 @@ public class BaseTest {
     private static final Logger logger = Logger.getLogger(BaseTest.class.getName());
 
     @BeforeMethod(alwaysRun = true)
-    @Parameters("browser")
-    public void setUp(@Optional("chrome") String browser) {
-        logger.info("Running test in: " + browser);
-        driver = createDriver(browser);
+    @Parameters({"browser", "headless"})
+    public void setUp(@Optional("chrome") String browser, @Optional("true") String headless) {
+        boolean isHeadless = Boolean.parseBoolean(headless);
+        logger.info("Running test in: " + browser + " | Headless mode: " + isHeadless);
+        driver = createDriver(browser, isHeadless);
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-        driver.quit();
-        logger.info("Browser is closed!");
+        if (driver !=null) {
+            driver.quit();
+            logger.info("Browser is closed!");
+        }
     }
 
-    private WebDriver createDriver(String browser) {
+    private WebDriver createDriver(String browser, boolean headless) {
         switch (browser.toLowerCase()) {
             case "chrome":
-                return new ChromeDriver();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                if (headless) {
+                    chromeOptions.addArguments("--headless");
+                    chromeOptions.addArguments("--disable-gpu");
+                    chromeOptions.addArguments("--window-size=1920,1080");
+                }
+                return new ChromeDriver(chromeOptions);
             case "firefox":
-                return new FirefoxDriver();
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                if (headless) {
+                    firefoxOptions.addArguments("--headless");
+                }
+                return new FirefoxDriver(firefoxOptions);
             default:
                 logger.warning("Configuration for " + browser + " is missing. Running tests in Chrome!");
                 return new ChromeDriver();
