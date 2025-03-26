@@ -1,7 +1,7 @@
 # HerokuApp Selenium Test Automation
 
 ##  Project Overview
-This project is a **Test Automation Framework** for testing [The Internet HerokuApp](https://the-internet.herokuapp.com/) using **Selenium WebDriver** and **TestNG**. 
+This project is a **Test Automation Framework** for testing [The Internet HerokuApp](https://the-internet.herokuapp.com/){:target="_blank"} using **Selenium WebDriver** and **TestNG**. 
 The tests cover **authentication, UI elements, navigation, and functionality checks**.
 
 ---
@@ -16,18 +16,20 @@ The tests cover **authentication, UI elements, navigation, and functionality che
 
 ## Installation & Setup
 - **Clone the Repository**\
-git clone https://github.com/Irida00/Herokuapp.git \
+git clone https://github.com/Irida00/Herokuapp.git{:target="_blank"} \
 cd Herokuapp
+-  **Download Java 21 or later if not installed**\
+  [Java21](https://www.oracle.com/java/technologies/downloads/#java21){:target="_blank"}
 -  **Check Java Version (Must be 21 or later)**\
 java -version
 -  **Download Maven if not installed**\
-  [Maven](https://maven.apache.org/download.cgi)\
+  [Maven](https://maven.apache.org/download.cgi){:target="_blank"}\
 -  **Check if Maven is installed**\
 mvn -version
 -  **Download Chrome WebDriver**\
-   [Chrome WebDriver](https://developer.chrome.com/docs/chromedriver/downloads)
+   [Chrome WebDriver](https://developer.chrome.com/docs/chromedriver/downloads){:target="_blank"}
 -  **Download GeckoDriver(for Firefox)**\
-   [GeckoDriver](https://github.com/mozilla/geckodriver/releases)   
+   [GeckoDriver](https://github.com/mozilla/geckodriver/releases){:target="_blank"}   
 -  **Extract and Move WebDrivers to a Folder in Your PATH**\
 On Windows, move chromedriver.exe to C:\Windows\System32\
 On Mac/Linux, move chromedriver to /usr/local/bin/
