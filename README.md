@@ -16,7 +16,7 @@ The tests cover **authentication, UI elements, navigation, and functionality che
 
 ## Installation & Setup
 - **Clone the Repository**\
-git clone https://github.com/Irida00/Herokuapp.git\
+git clone https://github.com/Irida00/Herokuapp.git \
 cd Herokuapp
 -  **Check Java Version (Must be 21 or later)**\
 java -version
