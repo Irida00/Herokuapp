@@ -19,3 +19,15 @@ The tests cover **authentication, UI elements, navigation, and functionality che
 ```sh
 git clone https://github.com/YOUR_GITHUB_USERNAME/Herokuapp.git
 cd Herokuapp
+**Check Java Version (Must be 21 or later)**
+java -version
+**Check if Maven is installed**
+mvn -version
+**Download Chrome WebDriver**
+**Extract and Move it to a Folder in Your PATH**
+On Windows, move chromedriver.exe to C:\Windows\System32
+On Mac/Linux, move chromedriver to /usr/local/bin/
+**Verify ChromeDriver Installation**
+chromedriver --version
+
+
