@@ -16,20 +16,20 @@ The tests cover **authentication, UI elements, navigation, and functionality che
 
 ## Installation & Setup
 - **Clone the Repository**\
-git clone https://github.com/Irida00/Herokuapp.git{:target="_blank"} \
+git clone https://github.com/Irida00/Herokuapp.git \
 cd Herokuapp
 -  **Download Java 21 or later if not installed**\
-  [Java21](https://www.oracle.com/java/technologies/downloads/#java21){:target="_blank"}
+  [Java21](https://www.oracle.com/java/technologies/downloads/#java21)
 -  **Check Java Version (Must be 21 or later)**\
 java -version
 -  **Download Maven if not installed**\
-  [Maven](https://maven.apache.org/download.cgi){:target="_blank"}\
+  [Maven](https://maven.apache.org/download.cgi)\
 -  **Check if Maven is installed**\
 mvn -version
 -  **Download Chrome WebDriver**\
-   [Chrome WebDriver](https://developer.chrome.com/docs/chromedriver/downloads){:target="_blank"}
+   [Chrome WebDriver](https://developer.chrome.com/docs/chromedriver/downloads)
 -  **Download GeckoDriver(for Firefox)**\
-   [GeckoDriver](https://github.com/mozilla/geckodriver/releases){:target="_blank"}   
+   [GeckoDriver](https://github.com/mozilla/geckodriver/releases)   
 -  **Extract and Move WebDrivers to a Folder in Your PATH**\
 On Windows, move chromedriver.exe to C:\Windows\System32\
 On Mac/Linux, move chromedriver to /usr/local/bin/
