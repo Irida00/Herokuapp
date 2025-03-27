@@ -35,10 +35,6 @@ public class AddRemoveElementsPage extends BasePage {
         super.click(deleteButton);
     }
 
-    public boolean isAddElementButtonPresent() {
-        return super.isDisplayed(addElementButton);
-    }
-
     public int getAddElementButtonCount() {
         return driver.findElements(addElementButton).size();
     }
@@ -54,6 +50,4 @@ public class AddRemoveElementsPage extends BasePage {
     public boolean isDeleteButtonHidden() {
         return super.waitForIsHidden(deleteButton);
     }
-
-
 }

@@ -23,22 +23,22 @@ cd Herokuapp
 -  **Check Java Version (Must be 21 or later)**\
 java -version
 -  **Download Maven if not installed**\
-  [Maven](https://maven.apache.org/download.cgi)\
+  [Maven](https://maven.apache.org/download.cgi)
 -  **Check if Maven is installed**\
 mvn -version
 -  **Download Chrome WebDriver**\
    [Chrome WebDriver](https://developer.chrome.com/docs/chromedriver/downloads)
--  **Download GeckoDriver(for Firefox)**\
-   [GeckoDriver](https://github.com/mozilla/geckodriver/releases)   
--  **Extract and Move WebDrivers to a Folder in Your PATH**\
-On Windows, move chromedriver.exe to C:\Windows\System32\
-On Mac/Linux, move chromedriver to /usr/local/bin/
+-  **Extract and Move Chrome WebDriver to a Folder in Your PATH**\
+     On Windows, move chromedriver.exe to C:\Windows\System32\
+     On Mac/Linux, move chromedriver to /usr/local/bin/
+-  **(optional) Download GeckoDriver(for Firefox)**\
+   [GeckoDriver](https://github.com/mozilla/geckodriver/releases)
 -  **Verify WebDrivers Installation**\
 chromedriver --version\
-geckodriver --version
+   (optional) geckodriver --version
 
 ## Running the Tests
-- **Run All Tests**
+- **Run All Tests**\
  **Once inside the project folder (Herokuapp), run:**\
   mvn test
 - **Run a Specific Test Class**\

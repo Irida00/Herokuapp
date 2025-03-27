@@ -37,6 +37,10 @@ public class StartPage extends BasePage {
         super(driver);
     }
 
+    public void visit() {
+        super.visit(PAGE_URL);
+    }
+
     private By getLocator(String key) {
         return LINK_LOCATORS.get(key);
     }
@@ -51,10 +55,6 @@ public class StartPage extends BasePage {
 
     public boolean isLinkDisplayed(String linkName) {
         return waitForIsDisplayed((getLocator(linkName)));
-    }
-
-    public void visit() {
-        super.visit(PAGE_URL);
     }
 
     public String getHeadingText() {

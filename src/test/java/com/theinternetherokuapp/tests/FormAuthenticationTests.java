@@ -1,6 +1,7 @@
 package com.theinternetherokuapp.tests;
 
 import com.theinternetherokuapp.basetest.BaseTest;
+import com.theinternetherokuapp.pageobjects.com.theinternetherokuapp.pageobjects.pages.ContextMenuPage;
 import com.theinternetherokuapp.pageobjects.com.theinternetherokuapp.pageobjects.pages.FormAuthenticationPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,6 +11,7 @@ import org.testng.annotations.Test;
  * on the Form Authentication Page of The Internet HerokuApp.
  *
  * Tests include:
+ * - Page heading is correct
  * - Successful login with valid credentials
  * - Login failure with invalid credentials
  * - Login failure with empty fields
@@ -27,6 +29,14 @@ public class FormAuthenticationTests extends BaseTest {
         formAuthenticationPage.login(validUsername, validPassword);
         Assert.assertTrue(formAuthenticationPage.isSuccessMessageDisplayed(), "Expected success message, but it is missing");
         Assert.assertTrue(formAuthenticationPage.isLogoutButtonDisplayed(), "Expected 'Logout' button, but it is not visible");
+    }
+
+    @Test
+    public void verifyPageHeadingIsCorrect() {
+        FormAuthenticationPage formAuthenticationPage = new FormAuthenticationPage(driver);
+        formAuthenticationPage.visit();
+        Assert.assertEquals(formAuthenticationPage.getHeadingText(),  "Login Page",
+                "Page heading is incorrect or missing");
     }
 
     @Test

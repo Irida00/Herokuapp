@@ -3,6 +3,7 @@ package com.theinternetherokuapp.tests;
 import com.theinternetherokuapp.basetest.BaseTest;
 import com.theinternetherokuapp.pageobjects.com.theinternetherokuapp.pageobjects.pages.AddRemoveElementsPage;
 
+import com.theinternetherokuapp.pageobjects.com.theinternetherokuapp.pageobjects.pages.FormAuthenticationPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,6 +12,7 @@ import org.testng.annotations.Test;
  * on the Add/Remove Elements page of The Internet HerokuApp.
  *
  * Tests include:
+ * - Page heading is correct
  * - Verifying only one "Add Element" button should be present initially
  * - Verifying no delete button exists before adding elements
  * - Adding an element and verifying the delete button appears
@@ -19,6 +21,14 @@ import org.testng.annotations.Test;
  */
 
 public class AddRemoveElementsTests extends BaseTest {
+
+    @Test
+    public void verifyPageHeadingIsCorrect() {
+        AddRemoveElementsPage addRemovePage = new AddRemoveElementsPage(driver);
+        addRemovePage.visit();
+        Assert.assertEquals(addRemovePage.getHeadingText(),  "Add/Remove Elements",
+                "Page heading is incorrect or missing");
+    }
 
     @Test
     public void verifyOnlyOneAddElementButtonIsPresentInitially() {
@@ -61,6 +71,6 @@ public class AddRemoveElementsTests extends BaseTest {
         addRemovePage.visit();
         addRemovePage.clickAddElementButton();
         addRemovePage.clickDeleteButton();
-        Assert.assertTrue(addRemovePage.isDeleteButtonHidden());
+        Assert.assertTrue(addRemovePage.isDeleteButtonHidden(), "Delete button is still visible after clicking it");
     }
 }
