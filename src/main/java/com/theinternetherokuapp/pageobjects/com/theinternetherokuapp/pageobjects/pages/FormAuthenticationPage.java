@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class FormAuthenticationPage extends BasePage {
     public static final String PAGE_URL = "https://the-internet.herokuapp.com/login";
+    private By heading = By.tagName("h2");
     private By usernameField = By.id("username");
     private By passwordField = By.id("password");
     private By loginButton = By.xpath("//button[@type='submit']");
@@ -26,18 +27,6 @@ public class FormAuthenticationPage extends BasePage {
 
     public void visit() {
         super.visit(PAGE_URL);
-    }
-
-    public void enterUsername(String text) {
-        super.type(usernameField, text);
-    }
-
-    public void enterPassword(String text) {
-        super.type(usernameField, text);
-    }
-
-    public void clickLoginButton() {
-        super.click(loginButton);
     }
 
     public void clickLogoutButton() {
@@ -67,4 +56,7 @@ public class FormAuthenticationPage extends BasePage {
         return "password".equals(passwordInput.getDomAttribute("type"));
     }
 
+    public String getHeadingText() {
+        return getText(heading);
+    }
 }

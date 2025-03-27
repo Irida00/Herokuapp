@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
  *
  * Tests include:
  * - Ensure the page loads with the correct URL.
- * - Check the page heading.
+ * - Page heading is correct
  * - Verify the presence of navigation links.
  * - Confirm that the footer is displayed.
  */
@@ -36,7 +36,7 @@ public class StartTests extends BaseTest {
         StartPage startPage = new StartPage(driver);
         startPage.visit();
         Assert.assertEquals(startPage.getHeadingText(), "Welcome to the-internet",
-                "Expected message is not correct");
+                "Page heading is incorrect or missing");
     }
 
     @Test
