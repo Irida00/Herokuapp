@@ -1,7 +1,7 @@
 # HerokuApp Selenium Test Automation
 
 ##  Project Overview
-This project is a **Test Automation Framework** for testing [The Internet HerokuApp](https://the-internet.herokuapp.com/){:target="_blank"} using **Selenium WebDriver** and **TestNG**. 
+This project is a **Test Automation Framework** for testing [The Internet HerokuApp](https://the-internet.herokuapp.com/) using **Selenium WebDriver** and **TestNG**. 
 The tests cover **authentication, UI elements, navigation, and functionality checks**.
 
 ---
